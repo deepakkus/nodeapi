@@ -1,16 +1,11 @@
 var mongoose = require("mongoose");
 const Patient = require("../../Models/patient");
-//var Upload = require("../../service/upload");
+
 const {
     Validator
 } = require("node-input-validator");
-var uuidv1 = require("uuid").v1;
 
 
-function createToken(data) {
-    data.hase = uuidv1();
-    return jwt.sign(data, "DonateSmile");
-}
 const create = async (req, res) => {
     const v = new Validator(req.body, {
         name: "required",
