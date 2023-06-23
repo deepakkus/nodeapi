@@ -5,3 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send({status: false})
 });
+
+const PatientController = require('../../../Controller/Admin/Patient');
+router.get('/admin/patient', PatientController.viewAll);
+module.exports = router;
